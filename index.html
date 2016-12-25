@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="MyDict">
+  <head>
+    <meta charset="UTF-8">
+    <title>英和辞典</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script>
+      const $ = jQuery = require('./node_modules/jquery/dist/jquery.min.js')
+      require('./node_modules/bootstrap/dist/js/bootstrap.min.js');
+      require('./node_modules/angular/angular.min.js')
+    </script>
+  </head>
+
+  <body>
+    <br>
+    <div ng-controller="MyDictController" class="container">
+      <form>
+        <input type="text" id="searchWord" class="form-control" placeholder="&#128269;  search"
+          ng-model="searchWord" ng-change="resetLimit(); computeResult()" />
+      </form>
+
+      <div id="searchWordInfo" ng-cloak ng-show="searchWord.length === 0">
+        <br>
+        <p class="text-center">
+          調べる単語を入力してください…
+        </p>
+      </div>
+
+      <table id="result" class="table" ng-cloak ng-show="searchWord.length !== 0">
+        <tr ng-repeat="difinition in result">
+          <td ng-bind="difinition.name"></td>
+          <td ng-bind="difinition.desc"></td>
+        </tr>
+      </table>
+      <div ng-cloak ng-show="isResultOverflow" class="text-center">loading...</div>
+    </div>
+  </body>
+
+  <script>
+    require('./renderer.js')
+  </script>
+</html>
