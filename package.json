@@ -3,10 +3,13 @@
   "version": "0.1.0",
   "main": "main.js",
   "scripts": {
-    "start": "./node_modules/.bin/electron ."
+    "start": "./node_modules/.bin/electron .",
+    "build": "./node_modules/.bin/electron-packager . ejjedict --platform=darwin,win32,linux --arch=x64 --icon=img/icon.icns",
+    "clean": "rm -rf ejjedict-darwin-x64 ejjedict-linux-x64 ejjedict-win32-x64"
   },
   "devDependencies": {
-    "electron": "^1.4.1"
+    "electron": "^1.4.1",
+    "electron-packager": "^8.4.0"
   },
   "dependencies": {
     "angular": "^1.6.1",
