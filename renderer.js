@@ -92,5 +92,5 @@ angular.module('MyDict', [])
       }
     });
 
-    console.log($scope);
+    // console.log($scope);
   }])

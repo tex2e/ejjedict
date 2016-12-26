@@ -8,7 +8,10 @@ let win
 
 function createWindow () {
   // Create the browser window.
-  win = new BrowserWindow({ width: 800, height: 600 })
+  win = new BrowserWindow({
+    width: 800, height: 600,
+    icon: __dirname + '/img/icon.ico'
+  })
 
   // and load the index.html of the app.
   win.loadURL(url.format({
@@ -17,8 +20,8 @@ function createWindow () {
     slashes: true
   }))
 
-  // Open the DevTools.
-  win.webContents.openDevTools()
+  // // Open the DevTools.
+  // win.webContents.openDevTools()
 
   // Emitted when the window is closed.
   win.on('closed', () => {
