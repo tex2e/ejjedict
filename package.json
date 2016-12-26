@@ -5,7 +5,8 @@
   "scripts": {
     "start": "./node_modules/.bin/electron .",
     "build": "./node_modules/.bin/electron-packager . ejjedict --platform=darwin,win32,linux --arch=x64 --icon=img/icon.icns",
-    "clean": "rm -rf ejjedict-darwin-x64 ejjedict-linux-x64 ejjedict-win32-x64"
+    "clean-tmp": "rm -rf ejjedict-darwin-x64 ejjedict-linux-x64 ejjedict-win32-x64",
+    "zip": "zip -r ejjedict-darwin-x64.zip ejjedict-darwin-x64; zip -r ejjedict-linux-x64.zip ejjedict-linux-x64; zip -r ejjedict-win32-x64.zip ejjedict-win32-x64"
   },
   "devDependencies": {
     "electron": "^1.4.1",
