@@ -52,3 +52,8 @@ jspm_packages
 
 
 # End of https://www.gitignore.io/api/node
+
+
+!node_modules/jquery/dist/jquery.min.js
+!node_modules/bootstrap/dist
+!node_modules/angular/angular.min.js
